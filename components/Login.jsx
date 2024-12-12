@@ -1,6 +1,5 @@
 import { View, Text, Image } from "react-native";
 import React from "react";
-import { StyleSheet } from "react-native";
 
 export default function Login() {
   return (
@@ -10,7 +9,11 @@ export default function Login() {
         style={{ width: "100%", height: 400 }}
       />
       <View
-        style={{ alignItems: "center", marginBottom: 20, borderRadius: 10 }}
+        style={{
+          alignItems: "center",
+          marginBottom: 20,
+          padding: 20,
+        }}
       >
         <Text style={{ fontSize: 28, fontFamily: "outfit-bold" }}>
           Ai Travel Planner
@@ -26,6 +29,20 @@ export default function Login() {
           Discover your next adventure effortlessly. Personalized itineraries at
           your fingertips. Travel smarter with AI-driven insights
         </Text>
+        <View
+          style={{
+            backgroundColor: "#000",
+            padding: 15,
+            borderRadius: 99,
+            marginTop: 25,
+          }}
+        >
+          <Text
+            style={{ color: "#fcba03", fontFamily: "outfit", fontSize: 17 }}
+          >
+            Sign In With Google
+          </Text>
+        </View>
       </View>
     </View>
   );
