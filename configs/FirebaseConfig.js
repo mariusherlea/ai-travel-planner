@@ -5,10 +5,12 @@ import { initializeApp } from "firebase/app";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
+require("dotenv").config();
+
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyDC1THFxDb9ZyHcejiBcV54zKxzvllrKXA",
+  apiKey: process.env.FIREBASE_API_KEY,
   authDomain: "travel-planner-161fc.firebaseapp.com",
   projectId: "travel-planner-161fc",
   storageBucket: "travel-planner-161fc.firebasestorage.app",
