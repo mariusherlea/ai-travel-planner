@@ -2,15 +2,14 @@
 import { initializeAuth, getReactNativePersistence } from "firebase/auth";
 import ReactNativeAsyncStorage from "@react-native-async-storage/async-storage";
 import { initializeApp } from "firebase/app";
+import Constants from "expo-constants";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
-
-require("dotenv").config();
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: process.env.FIREBASE_API_KEY,
+  apiKey: Constants.expoConfig.extra.firebaseApiKey,
   authDomain: "travel-planner-161fc.firebaseapp.com",
   projectId: "travel-planner-161fc",
   storageBucket: "travel-planner-161fc.firebasestorage.app",

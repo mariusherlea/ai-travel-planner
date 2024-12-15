@@ -3,6 +3,9 @@
     "name": "ai-travel-planner",
     "slug": "ai-travel-planner",
     "version": "1.0.0",
+    "extra": {
+      "firebaseApiKey": "AIzaSyDC1THFxDb9ZyHcejiBcV54zKxzvllrKXA"
+    },
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "myapp",
