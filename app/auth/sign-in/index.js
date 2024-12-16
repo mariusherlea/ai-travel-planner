@@ -60,9 +60,6 @@ export default function SignIn() {
     <KeyboardAvoidingView style={styles.container} behavior="padding">
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
         <View>
-          <TouchableOpacity onPress={() => router.back()}>
-            <Ionicons name="arrow-back" size={24} color="black" />
-          </TouchableOpacity>
           <Text style={styles.headerText}>Let's sign You in</Text>
           <Text style={styles.subHeaderText}>Welcome back</Text>
           <Text style={styles.subHeaderText}>You've been missed!</Text>
