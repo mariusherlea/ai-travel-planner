@@ -4,7 +4,7 @@ import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplet
 import Constants from "expo-constants";
 
 export default function SearchPlace() {
-  const googleApiKey = Constants.expoConfig.extra.googleMapsApiKey;
+  const googleApiKey = process.env.GOOGLE_MAPS_API_KEY;
 
   return (
     <View style={styles.container}>

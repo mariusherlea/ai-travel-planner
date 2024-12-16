@@ -4,8 +4,7 @@
     "slug": "ai-travel-planner",
     "version": "1.0.0",
     "extra": {
-      "firebaseApiKey": "AIzaSyDC1THFxDb9ZyHcejiBcV54zKxzvllrKXA",
-      "googleMapsApiKey": "AIzaSyBB12I7Guey0uZpeyePJzwYVnHnU4muVGU"
+      "firebaseApiKey": "AIzaSyDC1THFxDb9ZyHcejiBcV54zKxzvllrKXA"
     },
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
