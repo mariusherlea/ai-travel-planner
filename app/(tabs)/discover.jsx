@@ -4,7 +4,7 @@ import React from "react";
 export default function discover() {
   return (
     <View>
-      <Text>discover</Text>
+      <Text>Discover</Text>
     </View>
   );
 }
