@@ -3,9 +3,11 @@ import React, { useEffect } from "react";
 import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
 import { useContext } from "react";
 import { CreateTripContext } from "../../context/CreateTripContext";
+import { useRouter } from "expo-router";
 
 export default function SearchPlace() {
   const { tripData, setTripData } = useContext(CreateTripContext);
+  const router = useRouter();
   useEffect(() => {
     console.log("tripData:", tripData);
   }, [tripData]);
@@ -14,9 +16,9 @@ export default function SearchPlace() {
       <GooglePlacesAutocomplete
         placeholder="Search for a place"
         onPress={(data, details = null) => {
-          console.log("Selected Data:", data);
+          // console.log("Selected Data:", data);
           if (details) {
-            console.log("Details:", details.geometry.location);
+            // console.log("Details:", details.geometry.location);
           }
           setTripData({
             ...tripData,
@@ -27,6 +29,7 @@ export default function SearchPlace() {
               url: details.url,
             },
           });
+          router.push("create-trip/select-traveler");
         }}
         query={{
           key: "AIzaSyBB12I7Guey0uZpeyePJzwYVnHnU4muVGU",
