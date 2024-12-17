@@ -1,16 +1,19 @@
 import { View, Text } from "react-native";
 import React from "react";
 
-export default function OptionCard({ option }) {
+export default function OptionCard({ option, selectTraveler }) {
   return (
     <View
-      style={{
-        paddingTop: 10,
-        paddingBottom: 10,
-        display: "flex",
-        flexDirection: "row",
-        justifyContent: "space-between",
-      }}
+      style={[
+        {
+          padding: 20,
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "space-between",
+          backgroundColor: "#faf7ed",
+        },
+        selectTraveler?.id == option?.id && { borderWidth: 2 },
+      ]}
     >
       <View>
         <Text style={{ fontSize: 20, fontFamily: "outfit-bold" }}>
