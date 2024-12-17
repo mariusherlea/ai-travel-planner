@@ -1,8 +1,11 @@
 import { View, StyleSheet } from "react-native";
 import React from "react";
 import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
+import { useContext } from "react";
+import { CreateTripContext } from "../../context/CreateTripContext";
 
 export default function SearchPlace() {
+  const { tripData, setTripData } = useContext(CreateTripContext);
   return (
     <View style={styles.container}>
       <GooglePlacesAutocomplete
@@ -12,6 +15,15 @@ export default function SearchPlace() {
           if (details) {
             console.log("Details:", details.geometry.location);
           }
+          setTripData({
+            ...tripData,
+            locationInfo: {
+              name: data.description,
+              coordinates: details.geometry.location,
+              photoRef: details.photos[0].photo_reference,
+              url: details.url,
+            },
+          });
         }}
         query={{
           key: "AIzaSyBB12I7Guey0uZpeyePJzwYVnHnU4muVGU",
