@@ -1,11 +1,14 @@
 import { View, StyleSheet } from "react-native";
-import React from "react";
+import React, { useEffect } from "react";
 import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
 import { useContext } from "react";
 import { CreateTripContext } from "../../context/CreateTripContext";
 
 export default function SearchPlace() {
   const { tripData, setTripData } = useContext(CreateTripContext);
+  useEffect(() => {
+    console.log("tripData:", tripData);
+  }, [tripData]);
   return (
     <View style={styles.container}>
       <GooglePlacesAutocomplete
@@ -47,12 +50,11 @@ const styles = StyleSheet.create({
     textInputContainer: {
       backgroundColor: "#e5e5e5",
       borderRadius: 5,
-      marginBottom: 10,
     },
     textInput: {
-      height: 38,
-      color: "#5d5d5d",
-      fontSize: 16,
+      borderWidth: 1,
+      borderRadius: 15,
+      margintop: 20,
     },
   },
 });
