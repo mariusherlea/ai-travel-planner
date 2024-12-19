@@ -4,6 +4,7 @@ import { SelectTravelerList } from "../../constants/Options";
 import { CreateTripContext } from "../../context/CreateTripContext";
 
 import OptionCard from "../../components/CreateTrip/OptionCard";
+import { Link } from "expo-router";
 
 export default function SelectTraveler() {
   const { tripData, setTripData } = useContext(CreateTripContext);
@@ -14,7 +15,7 @@ export default function SelectTraveler() {
   }, [selectTraveler]);
   useEffect(() => {
     console.log("Updated tripData:", tripData);
-  }, tripData);
+  }, [tripData]);
   return (
     <View
       style={{
@@ -51,8 +52,11 @@ export default function SelectTraveler() {
           )}
         />
       </View>
+
       <TouchableOpacity style={{ padding: 15, backgroundColor: "#000" }}>
-        <Text style={{ color: "#fff", textAlign: "center" }}>Continue</Text>
+        <Link href={"create-trip/select-dates"}>
+          <Text style={{ color: "#fff", textAlign: "center" }}>Continue</Text>
+        </Link>
       </TouchableOpacity>
     </View>
   );
