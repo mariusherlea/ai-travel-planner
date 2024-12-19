@@ -10,8 +10,10 @@ import CalendarPicker from "react-native-calendar-picker";
 import moment from "moment";
 import { useContext } from "react";
 import { CreateTripContext } from "../../context/CreateTripContext";
+import { useRouter } from "expo-router";
 
 const App = () => {
+  const router = useRouter();
   const { tripData, setTripData } = useContext(CreateTripContext);
 
   const [startDate, setStartDate] = useState(null);
@@ -30,6 +32,7 @@ const App = () => {
       endDate: endDate,
       totalDays: totalNumberOfDays + 1,
     }));
+    router.push("create-trip/select-budget");
   };
 
   const onDateChange = (date, type) => {
